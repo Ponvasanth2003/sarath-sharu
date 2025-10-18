@@ -823,6 +823,13 @@
 
 	/* Mobile layout adjustments */
 	@media (max-width: 768px) {
+		.message {
+			margin-top: 90px !important;
+			/* Position between the two balloon rows */
+			position: relative;
+			z-index: 100;
+		}
+
 		.balloons {
 			width: 60px;
 			height: 110px;
@@ -867,6 +874,10 @@
 
 	/* For very small screens */
 	@media (max-width: 480px) {
+		.message {
+			margin-top: 70px !important;
+		}
+
 		.balloons {
 			width: 50px;
 			height: 92px;
@@ -1138,7 +1149,7 @@
 	}
 
 	.message {
-		margin-top: 200px;
+		margin-top: 150px;
 		display: none;
 	}
 

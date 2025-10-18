@@ -63,9 +63,6 @@
 	<div class="balloons text-center" id="b8">
 		<h2 style="color:#FF6B8B;">U</h2>
 	</div>
-	<div class="balloons text-center" id="b9">
-		<h2 style="color:#FFA500;">💝</h2>
-	</div>
 
 	<img src="Balloon-Border.png" width="100%" class="balloon-border">
 
@@ -210,7 +207,7 @@
 
 		$('#balloons_flying').click(function () {
 			$('.balloon-border').animate({ top: -500 }, 8000);
-			$('#b1,#b4,#b5,#b7,#b8,#b9').addClass('balloons-rotate-behaviour-one');
+			$('#b1,#b4,#b5,#b7,#b8').addClass('balloons-rotate-behaviour-one');
 			$('#b2,#b3,#b6').addClass('balloons-rotate-behaviour-two');
 
 			// Position balloons based on screen size
@@ -224,14 +221,13 @@
 				$('#b6').animate({ bottom: '20%' }, 1400);
 				$('#b7').animate({ bottom: '20%' }, 1600);
 				$('#b8').animate({ bottom: '20%' }, 1800);
-				$('#b9').animate({ bottom: '20%' }, 2000);
 			} else {
 				// Desktop layout - all balloons rise together
-				$('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').animate({ bottom: '100%' }, 2000);
+				$('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8').animate({ bottom: '100%' }, 2000);
 			}
 
 			// Use the reusable function for all balloons
-			for (let i = 1; i <= 9; i++) {
+			for (let i = 1; i <= 8; i++) {
 				createBalloonLoop('#b' + i)();
 			}
 
@@ -257,7 +253,7 @@
 		$('#wish_message').click(function () {
 			vw = $(window).width() / 2;
 
-			$('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').stop();
+			$('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8').stop();
 
 			// Check if mobile view
 			if ($(window).width() <= 768) {
@@ -270,10 +266,9 @@
 				$('#b6').attr('id', 'b66').animate({ top: '60%', left: '40%' }, 500);
 				$('#b7').attr('id', 'b77').animate({ top: '60%', left: '55%' }, 500);
 				$('#b8').attr('id', 'b88').animate({ top: '60%', left: '70%' }, 500);
-				$('#b9').attr('id', 'b99').animate({ top: '60%', left: '85%' }, 500);
 			} else {
 				// Desktop layout - all in a row
-				for (let i = 1; i <= 9; i++) {
+				for (let i = 1; i <= 8; i++) {
 					$('#b' + i).attr('id', 'b' + i + i).animate({ top: 240, left: vw - 400 + (i * 100) }, 500);
 				}
 			}
@@ -826,10 +821,6 @@
 		left: 80%;
 	}
 
-	#b9 {
-		left: 90%;
-	}
-
 	/* Mobile layout adjustments */
 	@media (max-width: 768px) {
 		.message {
@@ -883,10 +874,6 @@
 		#b8 {
 			left: 70%;
 		}
-
-		#b9 {
-			left: 85%;
-		}
 	}
 
 	/* For very small screens */
@@ -937,10 +924,6 @@
 		}
 
 		#b8 {
-			left: 85%;
-		}
-
-		#b9 {
 			left: 85%;
 		}
 	}
